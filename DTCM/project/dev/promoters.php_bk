@@ -1,0 +1,137 @@
+<?php require_once('Connections/eventscon.php'); ?>
+<?php  ob_start();
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ticket Master</title>
+<link href="events.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/date.js"></script>
+<link href="css/TM_style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onLoad="goforit()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="20">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td width="140" align="center" valign="top"><?php require("leftadds.php"); ?></td>
+    <td width="993" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><span style="width:773px;">
+          <?php require("headmain.php"); ?>
+        </span></td>
+      </tr>
+      <tr>
+        <td background="images/nav-bg.png"><span style="width:773px;">
+          <?php require("head.php"); ?>
+        </span></td>
+      </tr>
+      <tr>
+        <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="15" valign="top" background="images/shaffaf.png" >&nbsp;</td>
+                  <td valign="top" background="images/shaffaf.png" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                    </table>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td><img src="images/promoters-title-pix.png" width="255" height="32" /></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top"><?php
+
+		if (!$_SESSION['MM_UserGroup']){
+
+		 include("login.php");
+
+		 } else {
+
+		 include("salesinfo.php");
+
+		 }
+
+		  ?></td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top"><img src="images/weare.jpg" width="449" height="290" /></td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">&nbsp;</td>
+                        </tr>
+                  </table></td>
+                  <td width="15" valign="top" background="images/shaffaf.png" >&nbsp;</td>
+                  <td style="width:5px; height:24px;"></td>
+                  <td width="200" align="center" valign="top" background="images/shaffaf.png" style="width:200px; height:24px;"><span> </span>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="center">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td align="center"><?php require("right_side.php"); ?></td>
+                        </tr>
+                    </table></td>
+                </tr>
+            </table></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+    <td width="140" align="center" valign="top"><?php require("cintentsr.php");?></td>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="100" align="center" bgcolor="#000000"><span style="width:773px;">
+      <?php require("footer.php"); ?>
+    </span></td>
+  </tr>
+</table>
+<script type="text/javascript">
+
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
+<script type="text/javascript">
+
+try {
+
+var pageTracker = _gat._getTracker("UA-11947961-2");
+
+pageTracker._trackPageview();
+
+} catch(err) {}</script>
+</body>
+
+</html>
+

@@ -1,0 +1,1 @@
+{"Seller":"AELAB1","customer":{"ID":1414780,"Account":1399482,"AFile":"tel"},"Payments":[{"Amount":6000,"MeansOfPayment":"EXTERNAL"}]}

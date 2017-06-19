@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<name>facebook</name>
+<channel>pearhub.org</channel>
+<summary>Official Facebook PHP Client Library</summary>
+<description>Official PHP 5 wrapper for the facebook api. </description>
+<lead>
+<name>Lars Olesen</name>
+<user>lsolesen</user>
+<email>lars@intraface.dk</email>
+<active>yes</active>
+</lead>
+<date>2010-01-24</date>
+<time>12:45:42</time>
+<version>
+<release>0.1.0</release>
+<api>0.1.0</api>
+</version>
+<stability>
+<release>stable</release>
+<api>stable</api>
+</stability>
+<license>Unknown</license>
+<notes>version 0.1.0</notes>
+<contents>
+<dir name="/" baseinstalldir="/">
+<file baseinstalldir="/" md5sum="c480a2d19ce2d2b43230b1ea1fae6c4b" name="/facebook.php" role="php"/>
+<file baseinstalldir="/" md5sum="906f85a211f07ff98e0ae73a025d027b" name="/facebook_mobile.php" role="php"/>
+<file baseinstalldir="/" md5sum="68137afa1f314c03b748213b806ee003" name="/facebookapi_php5_restlib.php" role="php"/>
+<file baseinstalldir="/" md5sum="3ce5a187c2869122f7cbcd14eec99447" name="jsonwrapper/JSON/JSON.php" role="php"/>
+<file baseinstalldir="/" md5sum="f572694efc44fa58b7ca7adf100fea7d" name="jsonwrapper/JSON/LICENSE" role="php"/>
+<file baseinstalldir="/" md5sum="d3b3086757a72a79266bb06c576ae82c" name="jsonwrapper/jsonwrapper.php" role="php"/>
+<file baseinstalldir="/" md5sum="2badbaf20cb9a9b7262a61aae9fcd606" name="jsonwrapper/jsonwrapper_inner.php" role="php"/>
+</dir>
+</contents>
+<dependencies>
+<required>
+<php>
+<min>5.0.0</min>
+</php>
+<pearinstaller>
+<min>1.4.0</min>
+</pearinstaller>
+</required>
+</dependencies>
+<phprelease>
+<filelist>
+<install name="/facebook.php" as="/facebook.php"/>
+<install name="/facebook_mobile.php" as="/facebook_mobile.php"/>
+<install name="/facebookapi_php5_restlib.php" as="/facebookapi_php5_restlib.php"/>
+<install name="jsonwrapper/JSON/JSON.php" as="jsonwrapper/JSON/JSON.php"/>
+<install name="jsonwrapper/JSON/LICENSE" as="jsonwrapper/JSON/LICENSE"/>
+<install name="jsonwrapper/jsonwrapper.php" as="jsonwrapper/jsonwrapper.php"/>
+<install name="jsonwrapper/jsonwrapper_inner.php" as="jsonwrapper/jsonwrapper_inner.php"/>
+</filelist>
+</phprelease>
+</package>

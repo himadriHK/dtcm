@@ -1,0 +1,11 @@
+<?php
+
+if(isset($_REQUEST['name']))
+{
+    print_r($_POST);
+
+}
+
+
+include('left_content.html');
+?>

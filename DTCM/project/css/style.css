@@ -1,0 +1,165 @@
+html, body {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+body {
+    font: 100.01% "Trebuchet MS", Trebuchet, Tahoma, Verdana, Arial, sans-serif;
+    color: #333;
+    padding: 0;
+}
+
+body * {
+    line-height:1.22em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color:#4088b8;
+    clear: both;
+}
+
+h1 {
+}
+
+h2 {
+    color: #c8c8c8;
+		margin-top: -25px;
+}
+
+h3 {
+}
+
+h4 {
+    color: #333;
+    margin-bottom: -10px;
+}
+
+p {
+    margin: 10px 0;
+    clear: both;
+}
+
+ul, ol {
+    margin-left 0;
+}
+
+ul ul {
+    margin-bottom: 20px;
+}
+
+#wrap {
+    color: #404040;
+    /*margin: 0 12%;*/
+    margin: 0px 0px;
+}
+#wrap h1{color: #111;
+margin: 10px 0 20px;
+text-transform: uppercase;
+font-size: 23px;
+font-weight: normal;}
+a {
+    color: #4088b8;
+}
+
+table {
+    font-size: inherit;
+}
+
+th {
+    background: #d8d8d8;
+    text-align: left;
+    padding: 5px;
+    white-space: nowrap;
+}
+.hotel-box td {
+    background: none;
+    text-align: left;
+    padding: 0px;
+    vertical-align: top;
+}
+
+td {
+
+    text-align: left;
+    padding: 5px;
+    vertical-align: top;
+}
+
+select, input, textarea {
+    font: 99% "Trebuchet MS", Trebuchet, Tahoma, Verdana, Arial, sans-serif;
+}
+
+pre, code, tt, dt {
+    font: 100% monospace;
+    margin: 20px 0;
+}
+
+pre, blockquote {
+    padding: 15px;
+    background-color: #f0f0f0;
+    margin: 20px 0;
+    -moz-border-radius: 10px;
+}
+
+td pre {
+    font: 85% monospace;
+    padding: 5px;
+    margin: 5px 0;
+}
+.menu_tab ul ul{z-index:999;}
+
+
+/*slider*/
+/*.left_block h3.widget-title{  
+  -webkit-border-radius: 3px 3px 0px 0px;
+  -moz-border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0px 0px;
+  padding:5px 5px 5px 5px;
+  font-weight: bold;
+  margin:0px;
+
+	  background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+}  */
+.left_block .slideshow{
+  border-left: solid 1px #2781CE;
+  border-right: solid 1px #2781CE;
+  border-bottom: solid 1px #2781CE;
+}
+
+.left_block .slideshow div{
+  background: #fff;  
+}
+.slideshow, .slide2{ height:555px !important; overflow:hidden !important;}
+.slid_text{ padding: 0 15px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 18px;}
+.slid_head{ padding:0 15px;}
+.brder1{ border-bottom:1px solid #fff;}
+.options span{ display:inline-block; width:29%; float:left;}
+.options span:last-child{ width:13%;}
+.options span select{ width:95%; border-radius:2px; height:35px;}
+.options span input{ background:#008dce; border:none; width:100%; padding:8px 0; text-align:center; color:#fff; font-weight:bold;border-radius:2px;}
+
+
+
+
+
+
+
+
+
+
+
+
+

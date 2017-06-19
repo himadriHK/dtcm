@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.tktrush.com/$1 [L,R=301]

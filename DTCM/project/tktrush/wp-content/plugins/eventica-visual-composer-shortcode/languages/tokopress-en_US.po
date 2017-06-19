@@ -1,0 +1,720 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Eventica Visual Composer & Shortcodes v1.9.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-08-09 18:19:30+0000\n"
+"Last-Translator: wpthemes <admin@toko.press>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: components/vc-brand-sponsors.php:36
+#@ tokopress
+msgid "Our Sponsors"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:78
+#: components/vc-event-organizers.php:157
+#: components/vc-event-venues.php:157
+#: components/vc-events-organizer.php:151
+#: components/vc-events-venue.php:151
+#: components/vc-featured-event.php:208
+#: components/vc-past-events.php:198
+#: components/vc-recent-posts.php:151
+#: components/vc-testimonial.php:112
+#: components/vc-upcoming-events.php:198
+#@ tokopress
+msgid "Hide Section Title"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:81
+#: components/vc-event-organizers.php:160
+#: components/vc-event-venues.php:160
+#: components/vc-events-organizer.php:154
+#: components/vc-events-slider.php:233
+#: components/vc-events-venue.php:154
+#: components/vc-featured-event.php:211
+#: components/vc-past-events.php:201
+#: components/vc-posts-slider.php:204
+#: components/vc-recent-posts.php:154
+#: components/vc-testimonial.php:115
+#: components/vc-upcoming-events.php:201
+#@ tokopress
+msgid "No"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:82
+#: components/vc-event-organizers.php:161
+#: components/vc-event-venues.php:161
+#: components/vc-events-organizer.php:155
+#: components/vc-events-slider.php:234
+#: components/vc-events-venue.php:155
+#: components/vc-featured-event.php:212
+#: components/vc-past-events.php:202
+#: components/vc-posts-slider.php:205
+#: components/vc-recent-posts.php:155
+#: components/vc-testimonial.php:116
+#: components/vc-upcoming-events.php:202
+#@ tokopress
+msgid "Yes"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:87
+#: components/vc-event-organizers.php:166
+#: components/vc-event-venues.php:166
+#: components/vc-events-organizer.php:160
+#: components/vc-events-venue.php:160
+#: components/vc-featured-event.php:217
+#: components/vc-past-events.php:207
+#: components/vc-recent-posts.php:160
+#: components/vc-testimonial.php:121
+#: components/vc-upcoming-events.php:207
+#@ tokopress
+msgid "Section Title Text"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:88
+#: components/vc-event-organizers.php:167
+#: components/vc-event-venues.php:167
+#: components/vc-events-organizer.php:161
+#: components/vc-events-organizer.php:174
+#: components/vc-events-search.php:64
+#: components/vc-events-slider.php:225
+#: components/vc-events-venue.php:161
+#: components/vc-events-venue.php:174
+#: components/vc-featured-event.php:218
+#: components/vc-past-events.php:208
+#: components/vc-past-events.php:221
+#: components/vc-recent-posts.php:161
+#: components/vc-recent-posts.php:174
+#: components/vc-search.php:60
+#: components/vc-subscribe-form.php:83
+#: components/vc-subscribe-form.php:90
+#: components/vc-testimonial.php:122
+#: components/vc-upcoming-events.php:208
+#: components/vc-upcoming-events.php:221
+#@ tokopress
+msgid "Default:"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:88
+#: components/vc-testimonial.php:28
+#: components/vc-testimonial.php:122
+#@ tokopress
+msgid "Testimonials"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:94
+#: components/vc-event-organizers.php:173
+#: components/vc-event-venues.php:173
+#: components/vc-events-organizer.php:167
+#: components/vc-events-venue.php:167
+#: components/vc-featured-event.php:224
+#: components/vc-past-events.php:214
+#: components/vc-recent-posts.php:167
+#: components/vc-testimonial.php:128
+#: components/vc-upcoming-events.php:214
+#@ tokopress
+msgid "Section Title Color"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:96
+#: components/vc-event-organizers.php:175
+#: components/vc-event-venues.php:175
+#: components/vc-events-organizer.php:169
+#: components/vc-events-venue.php:169
+#: components/vc-featured-event.php:226
+#: components/vc-past-events.php:216
+#: components/vc-recent-posts.php:169
+#: components/vc-testimonial.php:130
+#: components/vc-upcoming-events.php:216
+#@ tokopress
+msgid "Select text color for section title."
+msgstr ""
+
+#: components/vc-brand-sponsors.php:103
+#, php-format
+#@ tokopress
+msgid "Image #%s"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:108
+#, php-format
+#@ tokopress
+msgid "Image URL #%s"
+msgstr ""
+
+#: components/vc-brand-sponsors.php:114
+#@ tokopress
+msgid "Eventica - Brand Sponsors"
+msgstr ""
+
+#: components/vc-events-organizer.php:43
+#: components/vc-events-organizer.php:161
+#@ tokopress
+msgid "Events Organizer"
+msgstr ""
+
+#: components/vc-events-organizer.php:46
+#: components/vc-events-organizer.php:174
+#: components/vc-events-venue.php:46
+#: components/vc-events-venue.php:174
+#@ tokopress
+msgid "Back to Events"
+msgstr ""
+
+#: components/vc-events-organizer.php:109
+#@ tokopress
+msgid "Eventica - Events Organizer"
+msgstr ""
+
+#: components/vc-event-organizers.php:117
+#: components/vc-events-organizer.php:119
+#@ tokopress
+msgid "Number Of Organizers"
+msgstr ""
+
+#: components/vc-event-organizers.php:132
+#: components/vc-event-venues.php:132
+#: components/vc-events-organizer.php:126
+#: components/vc-events-venue.php:126
+#: components/vc-past-events.php:173
+#: components/vc-recent-posts.php:126
+#: components/vc-upcoming-events.php:173
+#@ tokopress
+msgid "Number of Columns in Desktop"
+msgstr ""
+
+#: components/vc-event-organizers.php:141
+#: components/vc-event-venues.php:141
+#: components/vc-events-organizer.php:135
+#: components/vc-events-venue.php:135
+#: components/vc-past-events.php:182
+#: components/vc-recent-posts.php:135
+#: components/vc-upcoming-events.php:182
+#@ tokopress
+msgid "For device width >= 992px"
+msgstr ""
+
+#: components/vc-event-organizers.php:145
+#: components/vc-event-venues.php:145
+#: components/vc-events-organizer.php:139
+#: components/vc-events-venue.php:139
+#: components/vc-past-events.php:186
+#: components/vc-recent-posts.php:139
+#: components/vc-upcoming-events.php:186
+#@ tokopress
+msgid "Number of Columns in Tablet"
+msgstr ""
+
+#: components/vc-event-organizers.php:153
+#: components/vc-event-venues.php:153
+#: components/vc-events-organizer.php:147
+#: components/vc-events-venue.php:147
+#: components/vc-past-events.php:194
+#: components/vc-recent-posts.php:147
+#: components/vc-upcoming-events.php:194
+#@ tokopress
+msgid "For device width >= 768px and < 992px"
+msgstr ""
+
+#: components/vc-events-organizer.php:173
+#: components/vc-events-venue.php:173
+#: components/vc-past-events.php:220
+#: components/vc-recent-posts.php:173
+#: components/vc-upcoming-events.php:220
+#@ tokopress
+msgid "Section Link Text"
+msgstr ""
+
+#: components/vc-events-organizer.php:180
+#: components/vc-events-venue.php:180
+#: components/vc-past-events.php:227
+#: components/vc-recent-posts.php:180
+#: components/vc-upcoming-events.php:227
+#@ tokopress
+msgid "Section Link Color"
+msgstr ""
+
+#: components/vc-events-organizer.php:182
+#: components/vc-events-venue.php:182
+#: components/vc-past-events.php:229
+#: components/vc-recent-posts.php:182
+#: components/vc-upcoming-events.php:229
+#@ tokopress
+msgid "Select text color for section link."
+msgstr ""
+
+#: components/vc-events-search.php:21
+#: components/vc-events-search.php:64
+#@ tokopress
+msgid "Search Events &hellip;"
+msgstr ""
+
+#: components/vc-events-search.php:34
+#: components/vc-search.php:29
+#@ tokopress
+msgid "Search for:"
+msgstr ""
+
+#: components/vc-events-search.php:53
+#@ tokopress
+msgid "Eventica - Events Search Form"
+msgstr ""
+
+#: components/vc-events-search.php:63
+#: components/vc-search.php:59
+#@ tokopress
+msgid "Placeholder text"
+msgstr ""
+
+#: components/vc-events-slider.php:29
+#: components/vc-events-slider.php:225
+#: components/vc-posts-slider.php:26
+#@ tokopress
+msgid "Detail"
+msgstr ""
+
+#: components/vc-events-slider.php:178
+#@ tokopress
+msgid "Eventica - Events Slider"
+msgstr ""
+
+#: components/vc-events-slider.php:195
+#@ tokopress
+msgid "Number of Events"
+msgstr ""
+
+#: components/vc-events-slider.php:210
+#@ tokopress
+msgid "Use this is you want to show upcoming events. Leave \"Event IDs\" option empty."
+msgstr ""
+
+#: components/vc-events-slider.php:188
+#@ tokopress
+msgid "Event IDs"
+msgstr ""
+
+#: components/vc-events-slider.php:222
+#@ tokopress
+msgid "Button Text"
+msgstr ""
+
+#: components/vc-events-slider.php:230
+#: components/vc-posts-slider.php:201
+#@ tokopress
+msgid "Container"
+msgstr ""
+
+#: components/vc-events-slider.php:236
+#: components/vc-posts-slider.php:207
+#@ tokopress
+msgid "Use yes if you use \"Strecth Row\" option on Visual Composer row."
+msgstr ""
+
+#: components/vc-events-slider.php:240
+#@ tokopress
+msgid "Custom Column Size for Event Detail"
+msgstr ""
+
+#: components/vc-events-slider.php:243
+#: components/vc-posts-slider.php:214
+#@ tokopress
+msgid "default"
+msgstr ""
+
+#: components/vc-events-slider.php:255
+#@ tokopress
+msgid "Use this is you want to use custom column size (in 12 grid) for event detail box."
+msgstr ""
+
+#: components/vc-events-slider.php:259
+#@ tokopress
+msgid "Event Details Background Color"
+msgstr ""
+
+#: components/vc-events-slider.php:261
+#@ tokopress
+msgid "Select background color for event detail box."
+msgstr ""
+
+#: components/vc-events-slider.php:265
+#@ tokopress
+msgid "Event Details Text Color"
+msgstr ""
+
+#: components/vc-events-slider.php:267
+#@ tokopress
+msgid "Select text color for event detail box."
+msgstr ""
+
+#: components/vc-events-venue.php:43
+#: components/vc-events-venue.php:161
+#@ tokopress
+msgid "Events Venue"
+msgstr ""
+
+#: components/vc-events-venue.php:109
+#@ tokopress
+msgid "Eventica - Events Venue"
+msgstr ""
+
+#: components/vc-event-venues.php:117
+#: components/vc-events-venue.php:119
+#@ tokopress
+msgid "Number Of Venues"
+msgstr ""
+
+#: components/vc-featured-event.php:36
+#: components/vc-featured-event.php:191
+#: components/vc-featured-event.php:218
+#@ tokopress
+msgid "Featured Event"
+msgstr ""
+
+#: components/vc-featured-event.php:146
+#@ tokopress
+msgid "Please use correct published Event ID."
+msgstr ""
+
+#: components/vc-featured-event.php:181
+#@ tokopress
+msgid "Eventica - Featured Event"
+msgstr ""
+
+#: components/vc-featured-event.php:192
+#@ tokopress
+msgid "Select one event for featured event."
+msgstr ""
+
+#: components/vc-featured-event.php:199
+#@ tokopress
+msgid "Columns Style"
+msgstr ""
+
+#: components/vc-featured-event.php:202
+#@ tokopress
+msgid "1:1"
+msgstr ""
+
+#: components/vc-featured-event.php:203
+#@ tokopress
+msgid "1:2"
+msgstr ""
+
+#: components/vc-featured-event.php:230
+#@ tokopress
+msgid "Section Title Background"
+msgstr ""
+
+#: components/vc-featured-event.php:232
+#@ tokopress
+msgid "Select background color for section title."
+msgstr ""
+
+#: components/vc-recent-posts.php:43
+#: components/vc-recent-posts.php:161
+#@ tokopress
+msgid "Recent Posts"
+msgstr ""
+
+#: components/vc-recent-posts.php:46
+#: components/vc-recent-posts.php:174
+#@ tokopress
+msgid "All Posts"
+msgstr ""
+
+#: components/vc-recent-posts.php:109
+#@ tokopress
+msgid "Eventica - Recent Posts"
+msgstr ""
+
+#: components/vc-recent-posts.php:119
+#@ tokopress
+msgid "Number Of Posts"
+msgstr ""
+
+#: components/vc-search.php:18
+#: components/vc-search.php:60
+#@ tokopress
+msgid "Search &hellip;"
+msgstr ""
+
+#: components/vc-search.php:49
+#@ tokopress
+msgid "Eventica - Search Form"
+msgstr ""
+
+#: components/vc-subscribe-form.php:23
+#: components/vc-subscribe-form.php:83
+#@ tokopress
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: components/vc-subscribe-form.php:26
+#: components/vc-subscribe-form.php:90
+#@ tokopress
+msgid "never miss our latest news and events updates"
+msgstr ""
+
+#: components/vc-subscribe-form.php:71
+#@ tokopress
+msgid "Eventica - Subscribe Form"
+msgstr ""
+
+#: components/vc-subscribe-form.php:81
+#@ tokopress
+msgid "Title"
+msgstr ""
+
+#: components/vc-subscribe-form.php:88
+#@ tokopress
+msgid "Description"
+msgstr ""
+
+#: components/vc-testimonial.php:83
+#@ tokopress
+msgid "Eventica - Testimonials"
+msgstr ""
+
+#: components/vc-testimonial.php:93
+#@ tokopress
+msgid "Number Of Testimonials"
+msgstr ""
+
+#: components/vc-upcoming-events.php:48
+#: components/vc-upcoming-events.php:208
+#@ tokopress
+msgid "Upcoming Events"
+msgstr ""
+
+#: components/vc-upcoming-events.php:51
+#: components/vc-upcoming-events.php:221
+#@ tokopress
+msgid "All Events"
+msgstr ""
+
+#: components/vc-events-slider.php:96
+#: components/vc-past-events.php:80
+#: components/vc-upcoming-events.php:80
+#, php-format
+#@ tokopress
+msgid "\"%s\" event category does not exist."
+msgstr ""
+
+#: components/vc-upcoming-events.php:140
+#@ tokopress
+msgid "Eventica - Upcoming Events"
+msgstr ""
+
+#: components/vc-events-slider.php:214
+#: components/vc-past-events.php:157
+#: components/vc-upcoming-events.php:157
+#@ tokopress
+msgid "Event Category Name"
+msgstr ""
+
+#: components/vc-past-events.php:159
+#: components/vc-upcoming-events.php:159
+#@ tokopress
+msgid "Put event category name here if you want to retrieve upcoming events from this category only."
+msgstr ""
+
+#: components/vc-past-events.php:150
+#: components/vc-upcoming-events.php:150
+#@ tokopress
+msgid "Number Of Events"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: plugins.php:0
+#@ tokopress
+msgid "Eventica Visual Composer & Shortcodes"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#. translators: plugin header field 'AuthorURI'
+#: plugins.php:0
+#@ tokopress
+msgid "http://tokopress.com/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: plugins.php:0
+#@ tokopress
+msgid "Visual composer elements and shortcodes for Eventica WordPress Theme"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: plugins.php:0
+#@ tokopress
+msgid "TokoPress"
+msgstr ""
+
+#: components/vc-events-slider.php:191
+#@ tokopress
+msgid "Separated by comma. Use this is you want to show some specific events. \"Number of Events\" and \"Event Category\" options will be ignored."
+msgstr ""
+
+#: components/vc-events-slider.php:216
+#@ tokopress
+msgid "Put event category name here if you want to retrieve upcoming events from this category only. Leave \"Event IDs\" option empty."
+msgstr ""
+
+#: components/vc-event-organizers.php:124
+#: components/vc-event-venues.php:124
+#: components/vc-past-events.php:165
+#: components/vc-upcoming-events.php:165
+#@ tokopress
+msgid "Exclude"
+msgstr ""
+
+#: components/vc-past-events.php:167
+#: components/vc-upcoming-events.php:167
+#@ tokopress
+msgid "Insert Event IDs (separated by comma) to exclude."
+msgstr ""
+
+#: components/vc-past-events.php:48
+#: components/vc-past-events.php:208
+#@ tokopress
+msgid "Past Events"
+msgstr ""
+
+#: components/vc-past-events.php:51
+#: components/vc-past-events.php:221
+#@ tokopress
+msgid "All Past Events"
+msgstr ""
+
+#: components/vc-past-events.php:140
+#@ tokopress
+msgid "Eventica - Past Events"
+msgstr ""
+
+#: components/vc-posts-slider.php:91
+#, php-format
+#@ tokopress
+msgid "\"%s\" post category does not exist."
+msgstr ""
+
+#: components/vc-posts-slider.php:157
+#@ tokopress
+msgid "Eventica - Posts Slider"
+msgstr ""
+
+#: components/vc-posts-slider.php:167
+#@ tokopress
+msgid "Post IDs"
+msgstr ""
+
+#: components/vc-posts-slider.php:170
+#@ tokopress
+msgid "Separated by comma. Use this is you want to show some specific posts. \"Number of Posts\" and \"Post Category\" options will be ignored."
+msgstr ""
+
+#: components/vc-posts-slider.php:174
+#@ tokopress
+msgid "Number of Posts"
+msgstr ""
+
+#: components/vc-posts-slider.php:189
+#@ tokopress
+msgid "Use this is you want to show recent posts. Leave \"Post IDs\" option empty."
+msgstr ""
+
+#: components/vc-posts-slider.php:193
+#@ tokopress
+msgid "Post Category Name"
+msgstr ""
+
+#: components/vc-posts-slider.php:195
+#@ tokopress
+msgid "Put post category name here if you want to retrieve upcoming posts from this category only. Leave \"Post IDs\" option empty."
+msgstr ""
+
+#: components/vc-posts-slider.php:211
+#@ tokopress
+msgid "Custom Column Size for Post Detail"
+msgstr ""
+
+#: components/vc-posts-slider.php:226
+#@ tokopress
+msgid "Use this is you want to use custom column size (in 12 grid) for post detail box."
+msgstr ""
+
+#: components/vc-posts-slider.php:230
+#@ tokopress
+msgid "Post Details Background Color"
+msgstr ""
+
+#: components/vc-posts-slider.php:232
+#@ tokopress
+msgid "Select background color for post detail box."
+msgstr ""
+
+#: components/vc-posts-slider.php:236
+#@ tokopress
+msgid "Post Details Text Color"
+msgstr ""
+
+#: components/vc-posts-slider.php:238
+#@ tokopress
+msgid "Select text color for post detail box."
+msgstr ""
+
+#: components/vc-subscribe-form.php:95
+#@ tokopress
+msgid "Select Mailchimp Form"
+msgstr ""
+
+#: components/vc-event-organizers.php:45
+#: components/vc-event-organizers.php:167
+#@ tokopress
+msgid "Event Organizers"
+msgstr ""
+
+#: components/vc-event-organizers.php:107
+#@ tokopress
+msgid "Eventica - Event Organizers"
+msgstr ""
+
+#: components/vc-event-organizers.php:126
+#@ tokopress
+msgid "Insert Organizer IDs (separated by comma) to exclude."
+msgstr ""
+
+#: components/vc-event-venues.php:45
+#: components/vc-event-venues.php:167
+#@ tokopress
+msgid "Event Venues"
+msgstr ""
+
+#: components/vc-event-venues.php:107
+#@ tokopress
+msgid "Eventica - Event Venues"
+msgstr ""
+
+#: components/vc-event-venues.php:126
+#@ tokopress
+msgid "Insert Venue IDs (separated by comma) to exclude."
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: plugins.php:0
+#@ tokopress
+msgid "1.9.0"
+msgstr ""
+
