@@ -1,4 +1,5 @@
-<?php require_once('Connections/eventscon.php'); require_once('dtcm_api.php'); ?>
+<?php require_once('Connections/eventscon.php'); include('dtcm_api/api_test.php');
+include('dtcm_api/dtcm_api.php'); ?>
 <?php include("functions.php"); ?>
 <?php include("config.php"); ?>
 <?php
@@ -432,31 +433,19 @@ if(isset($_GET['eid'])){
 									<?php } ?>
 							</tr>
 							<tr>
-								<td colspan="2" class="eventTextWhite full_width"><?php //gettickets($row_eventRs['tid'],$seat_type_arr);
-									if($_SERVER['REMOTE_ADDR']=='106.220.145.16'){
-										$row_eventRs['dtcm_approved']='Yes';
-										$row_eventRs['dtcm_code'] = 'ETES3EL';
-									}
-									if($row_eventRs['dtcm_approved']=='Yes' && $row_eventRs['dtcm_code']!='' )
+								<td colspan="2" class="eventTextWhite full_width"><?php
+								echo "Here I am";
+								echo $row_eventRs['dtcm_approved'];
+								echo $row_eventRs['dtcm_code'];
+
+								 //gettickets($row_eventRs['tid'],$seat_type_arr);
+								if($row_eventRs['dtcm_approved']=='Yes' && $row_eventRs['dtcm_code']!='' )
 									{
+										global $dtcm_;
 										$eventcode = $row_eventRs['dtcm_code'];
-										if(isset($_SESSION['access_token']) && (time()-$_SESSION['token_addtime'])<$_SESSION['token_lifetime']){
-										//if(isset($_SESSION['access_token'])){
-											 $access_token = $_SESSION['access_token'];
-										} else{
-										$code_details = Dtcm::get_code();
-										if($code_details['access_token']!=''){
-											
-										$access_token=$code_details['access_token'];
-										$_SESSION['access_token']=$access_token;
-										$_SESSION['token_lifetime']=$code_details['expires_in'];
-										$_SESSION['token_addtime']=time();
-										}
-										}
-										if($access_token){
-										$prices = Dtcm::get_prices($access_token,$eventcode);
-										$ticket_prices = json_decode($prices,true);
-										}
+										$ticket_prices=json_decode($dtcm_->get_performance_prices($eventcode),true);
+										//var_dump($ticket_prices);
+										echo "HERE";
 										$string = '';
 										if(!empty($ticket_prices)){
 											foreach ($ticket_prices['PriceCategories'] as $stand){

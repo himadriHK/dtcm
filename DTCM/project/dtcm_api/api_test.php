@@ -36,7 +36,7 @@ function get_access_token() {
             if($access_token_res){
                 //var_dump($access_token_res['body']);
 				$tmp_2=$access_token_res['body'];
-				var_dump($access_token_res);
+				//var_dump($access_token_res);
 				//var_dump($tmp_2);
             //if ($access_token_res['response']['code'] == 200) {
                 $token_res = json_decode($tmp_2,true);
@@ -171,6 +171,7 @@ else
 $dtcm_=new DTCMMain();
 //echo isset($_POST['dtcm_command']);
 //var_dump ($_POST);
+global $dtcm_;
 
 if(isset($_POST['dtcm_command']) && isset($_POST['dtcm_arg']))
 {
