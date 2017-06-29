@@ -1,8 +1,5 @@
 <?php
 @session_start();
-if( !isset($_SESSION["softix_token"]) ){
-require_once 'softix-token.php';
-}
 include("config.php"); ?>
 <?php
 require_once('dateclass.php');

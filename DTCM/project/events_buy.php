@@ -434,9 +434,24 @@ if(isset($_GET['eid'])){
 							</tr>
 							<tr>
 								<td colspan="2" class="eventTextWhite full_width"><?php
-								echo "Here I am";
-								echo $row_eventRs['dtcm_approved'];
-								echo $row_eventRs['dtcm_code'];
+								//echo "Here I am";
+								//echo $row_eventRs['dtcm_approved'];
+								//echo $row_eventRs['dtcm_code'];
+								function multidimensional_search($parents, $searched) {
+									if (empty($searched) || empty($parents)) {
+										return false;
+									}
+								
+									foreach ($parents as $key => $value) {
+										$exists = true;
+										foreach ($searched as $skey => $svalue) {
+											$exists = ($exists && IsSet($parents[$key][$skey]) && $parents[$key][$skey] == $svalue);
+										}
+										if($exists){ return $key; }
+									}
+								
+									return false;
+								}
 
 								 //gettickets($row_eventRs['tid'],$seat_type_arr);
 								if($row_eventRs['dtcm_approved']=='Yes' && $row_eventRs['dtcm_code']!='' )
@@ -444,11 +459,17 @@ if(isset($_GET['eid'])){
 										global $dtcm_;
 										$eventcode = $row_eventRs['dtcm_code'];
 										$ticket_prices=json_decode($dtcm_->get_performance_prices($eventcode),true);
-										//var_dump($ticket_prices);
-										echo "HERE";
+										$available_prices=json_decode($dtcm_->get_performance_availabilities($eventcode),true);
+										var_dump($available_prices['PriceCategories'][1]);
+										//echo "HERE";
 										$string = '';
 										if(!empty($ticket_prices)){
 											foreach ($ticket_prices['PriceCategories'] as $stand){
+												//if($available_prices['priceCategoryId'->$stand['PriceCategoryId'])
+												//var_dump($stand);
+												//var_dump(multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId'])));
+												if($available_prices[multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['Availability']['SoldOut']=='true')
+													continue;
 										?>
 										<div class="price_option">
 										<h4>
@@ -456,12 +477,13 @@ if(isset($_GET['eid'])){
 										</h4>
 										<?php 
 											foreach ($ticket_prices['PriceTypes'] as $priceType){
-												if($priceType['PriceTypeCode'] == 'Q'){
+												//var_dump($priceType);
+												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'){
 													$price_data = get_priceByCatType($stand['PriceCategoryId'],$priceType['PriceTypeId'],$ticket_prices);
-													if($price_data !='' && $price_data['PriceNet']>0 ){ 
+													if(($price_data !='' && $price_data['PriceNet']>0 )){ 
 													$string .=$price_data['PriceId'].',';
 														?>
-														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?>:<?php echo $price_data['PriceNet'];?>&nbsp;AED
+														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?>:<?php echo $price_data['PriceNet']/100;?>&nbsp;AED
 										</span><br />
 										<?php 
 														
@@ -472,7 +494,7 @@ if(isset($_GET['eid'])){
 										<div class="adultbg">
 										<?php 
 											foreach ($ticket_prices['PriceTypes'] as $priceType){
-												if($priceType['PriceTypeCode'] == 'Q'){
+												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'){
 													$price_data = get_priceByCatType($stand['PriceCategoryId'],$priceType['PriceTypeId'],$ticket_prices);
 													if($price_data !='' && $price_data['PriceNet']>0 ){
 										?>
