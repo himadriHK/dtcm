@@ -460,7 +460,7 @@ if(isset($_GET['eid'])){
 										$eventcode = $row_eventRs['dtcm_code'];
 										$ticket_prices=json_decode($dtcm_->get_performance_prices($eventcode),true);
 										$available_prices=json_decode($dtcm_->get_performance_availabilities($eventcode),true);
-										var_dump($available_prices['PriceCategories'][1]);
+										//var_dump($available_prices);
 										//echo "HERE";
 										$string = '';
 										if(!empty($ticket_prices)){
@@ -468,7 +468,9 @@ if(isset($_GET['eid'])){
 												//if($available_prices['priceCategoryId'->$stand['PriceCategoryId'])
 												//var_dump($stand);
 												//var_dump(multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId'])));
-												if($available_prices[multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['Availability']['SoldOut']=='true')
+												if($available_prices['PriceCategories'][multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['Availability']['SoldOut']=='true')
+													continue;
+												if($available_prices['PriceCategories'][multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['PriceCategoryName']=='Reserved')
 													continue;
 										?>
 										<div class="price_option">
@@ -483,8 +485,7 @@ if(isset($_GET['eid'])){
 													if(($price_data !='' && $price_data['PriceNet']>0 )){ 
 													$string .=$price_data['PriceId'].',';
 														?>
-														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?>:<?php echo $price_data['PriceNet']/100;?>&nbsp;AED
-										</span><br />
+														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?></span>:<span class="adult_price" id="price<?php echo $price_data['PriceId']?>"><?php echo $price_data['PriceNet']/100;?></span>&nbsp;AED<br />
 										<?php 
 														
 													}
@@ -753,7 +754,7 @@ if(isset($_GET['eid'])){
                             </tr>
                             <tr>
                             	<td align="left" valign="middle" class="eventVenueWhite">Service Charge:</td>
-                                <td><?php  echo $row_eventRs['service_charge'].' '.$im_final_currency; ?>
+                                <td><?php  echo $row_eventRs['service_charge']?><?php if($row_eventRs['dtcm_approved']=='Yes') echo ' AED'; else echo ' '.$im_final_currency; ?>
                                     <input type="hidden" id="tkt_service_charges" value="<?=$row_eventRs['service_charge']?>">
                                 </td>
                             </tr>
@@ -1023,7 +1024,7 @@ pageTracker._trackPageview();
 } catch(err) {}
 </script>
 <script type="text/javascript" language="javascript">
-<!--
+
 function getTotal(){
 var tottickets;
 tottickets = 0;
@@ -1035,18 +1036,18 @@ var k=value;
 //if (price[k]==0){ document.form1.tickets.readOnly = true; }
 //if (cprice[k]==0){ document.form1.ctickets.readOnly = true; }
 if($("#tickets"+k) && $("#tickets"+k).val()!=0){
-tottickets = Number(tottickets) +(Number(price[k] * $("#tickets"+k).val()));
+tottickets = Number(tottickets) +(Number($("#price"+k).prop('innerText') * $("#tickets"+k).val()));
 }
 console.log(tottickets);
-<?php// if($_GET['eid'] != 161){ ?>
-if($("#ctickets"+k) && $("#ctickets"+k).val()!=0){
-    console.log(cprice[k]);
-tottickets =Number(tottickets) + (Number(Number(cprice[k] * $("#ctickets"+k).val())));
-}
-<?php// } ?>
-console.log(tottickets);
+
+//if($("#ctickets"+k) && $("#ctickets"+k).val()!=0){
+//    console.log(cprice[k]);
+//tottickets =Number(tottickets) + (Number(Number(cprice[k] * $("#ctickets"+k).val())));
+//}
+
+//console.log(tottickets);
 });
-console.log(tottickets);
+//console.log(tottickets);
 var selected_extra_service = $('#extra_services').find('option:selected');
 var selected_extra_service_price = selected_extra_service.attr("data-price");
     if(selected_extra_service_price === undefined){
@@ -1073,8 +1074,9 @@ document.form1.totalticket.value = Number(tottickets);
 document.form1.vpc_Amount.value = Number(tottickets)*100;
 document.getElementById('totalticket').focus();
 }
+</script>
 
-
+<!--
 $(document).ready(function(){
 $('.check_avail').change(function(){
     console.log('change works');
