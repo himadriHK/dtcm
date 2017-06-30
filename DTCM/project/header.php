@@ -279,7 +279,7 @@ if($popup){
 <script type="text/javascript">
 $(function(){
 	if(!localStorage.skipIMPopup)
-		$('#im_popup').modal('show');
+		//$('#im_popup').modal('show');
 	$('a#im_popup_skip').click(function(){
 		localStorage.skipIMPopup = 1;
 		$('#im_popup').modal('hide');

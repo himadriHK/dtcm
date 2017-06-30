@@ -21,7 +21,7 @@ class DTCMMain {
                 "Authorization" => "Basic $auth",
                 "Content-Type" => "application/x-www-form-urlencoded"),
             "body" => "grant_type=client_credentials");
-        $tmp['body']=wp_remote_post($dtcm_acc_token_url, $access_token_args);// '{"access_token":"78169748cf6642c58a98a99a44f36a57","token_type":"Bearer","expires_in":86399,"scope":"https://api.etixdubai.com/performances.* https://api.etixdubai.com/baskets.* https://api.etixdubai.com/orders.* https://api.etixdubai.com/inventory.* https://api.etixdubai.com/customers.* https://api.etixdubai.com/tixscan"}';//wp_remote_post($dtcm_acc_token_url, $access_token_args);
+        $tmp['body']=wp_remote_post($dtcm_acc_token_url, $access_token_args);//'{"access_token":"78169748cf6642c58a98a99a44f36a57","token_type":"Bearer","expires_in":86399,"scope":"https://api.etixdubai.com/performances.* https://api.etixdubai.com/baskets.* https://api.etixdubai.com/orders.* https://api.etixdubai.com/inventory.* https://api.etixdubai.com/customers.* https://api.etixdubai.com/tixscan"}';//wp_remote_post($dtcm_acc_token_url, $access_token_args);
 return $tmp;
     }
 function get_access_token() {
@@ -44,6 +44,7 @@ function get_access_token() {
 
                 update_option('dtcm_access_token', $token_res['access_token']);
                 update_option('dtcm_access_token_expires', $token_res['expires_in'] + time());
+                //var_dump($access_token_res);
                 return $token_res['access_token'];
             //} else {
             //    return false; //something went wrong

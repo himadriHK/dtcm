@@ -40,7 +40,7 @@ if($_POST["paytype"]=="pt_spot" ){
 
     mysql_select_db($database_eventscon, $eventscon);
 
-    $query_update = sprintf("UPDATE ticket_orders SET partner_id = ".$_SESSION['PP_UserId'].",ccapproved = 'Yes', payment_status = 'paid',customer_info = '".serialize($customer_data)."' WHERE oid = %s", $_SESSION['orderid']);
+    $query_update = sprintf("UPDATE ticket_orders SET partner_id = ".$_SESSION['PP_UserId'].",ccapproved = 'Yes', event_date='".$_POST['sessiondate'].",payment_status = 'paid',customer_info = '".serialize($customer_data)."' WHERE oid = %s", $_SESSION['orderid']);
 
     $update = mysql_query($query_update, $eventscon) or die(mysql_error());
     $orderid=$_SESSION['orderid'];

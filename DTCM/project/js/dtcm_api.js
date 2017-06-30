@@ -15,7 +15,7 @@ var req = new nano.ajax.request('../dtcm_api/api_test.php', 'post', false,{dtcm_
  var rsp = new nano.ajax.response(
       req,
       function() {
-		  //console.log(this.response.text.trim());
+		  console.log(this.response.text.trim());
 		  //nano('result').set(this.response.text);
       }
   );

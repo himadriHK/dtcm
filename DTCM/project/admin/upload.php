@@ -4,19 +4,19 @@ set_time_limit(0);
 $piccount=0;
 
 /*
-if (!(extension_loaded("gd")))
-{echo "GD library not compiled or loaded into this server!<br>
-This script can not work without GD library!";
-die;
-}
+// if (!(extension_loaded("gd")))
+// {echo "GD library not compiled or loaded into this server!<br>
+// This script can not work without GD library!";
+// die;
+// }
 
 
-if (!(is_dir($_SERVER['DOCUMENT_ROOT']."/administer/data/")))
-{echo "Directory \"data\" not found!<br>
-Please create directory with name \"data\" and set 0777 permissions
- (uploaded files goes here)";
-die;
-}
+// if (!(is_dir($_SERVER['DOCUMENT_ROOT']."/administer/data/")))
+// {echo "Directory \"data\" not found!<br>
+// Please create directory with name \"data\" and set 0777 permissions
+//  (uploaded files goes here)";
+// die;
+// }
 */
 //############################### MAIN function ####################################
 function uploadimg($xpic, $thumb_image, $resize_image, $imgw, $imgh, $timgw, $timgh)

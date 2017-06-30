@@ -218,6 +218,9 @@ $total_price = $single_price*$val;
 	$total_price=$total_price+$_POST['charges']+($total_price*0.05)+2;
 
 $pids=implode(",",$pids);
+
+die(var_dump($pids));
+
 if(!empty($pcats)){
 	foreach($pcats as $catcode => $price_data){
 		$basket_info['channel']='W';
