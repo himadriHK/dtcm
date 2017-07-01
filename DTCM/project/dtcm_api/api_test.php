@@ -3,7 +3,7 @@ include('dtcm_api.php');
 
 class DTCMMain {
 
-    private $seller_code = "AELAB1";
+    public $seller_code = "AELAB1";
     private $client_id = "193908c0ac0149f190c678827dab218c";
     private $secret_code = "3182134e601a4d2496f5b6fed9b39aa3";
 
@@ -108,7 +108,7 @@ function post_demands_to_dtcm($args){
             }
             $demands_args = array("headers" => array("Authorization" => "Bearer $access_token",
                     "Content-Type" => "application/json"),
-                "body"=>$demands
+                "body"=>json_encode($demands)
             );
             $add_to_basket_res = wp_remote_post($endpoint, $demands_args);
             //var_dump($add_to_basket_res);

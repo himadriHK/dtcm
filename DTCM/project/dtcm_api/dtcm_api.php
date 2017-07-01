@@ -1,5 +1,5 @@
 <?php include('httpful.phar');
-require_once('/Connections/eventscon.php'); 
+include('Connections/eventscon.php'); 
 
 //$mapp=array('dtcm_access_token'=>'a','dtcm_access_token_expires'=>0);
 //$GLOBALS['map']=$mapp;
@@ -16,9 +16,9 @@ function wp_remote_post($url,$args)
 	$body=$args['body'];
 	$response = \Httpful\Request::post($url)
     ->body($body)
-	->addHeaders($headers)->useProxy('PITC-Zscaler-ASPAC-Bangalore3PR.proxy.corporate.ge.com')
+	->addHeaders($headers)
     ->send();
-	//var_dump($response);
+	var_dump($response);
 	$tmp['body']='';
 	//var_dump($response);
 	if(!$response->hasErrors())
@@ -38,7 +38,7 @@ function wp_remote_get($url,$args)
 	$body=$args['body'];
 	$response = \Httpful\Request::get($url)
     ->body($body)
-	->addHeaders($headers)->useProxy('PITC-Zscaler-ASPAC-Bangalore3PR.proxy.corporate.ge.com')
+	->addHeaders($headers)
     ->send();
 	//var_dump($response);
 	$tmp['body']='';

@@ -1,10 +1,10 @@
 <?php 
-session_start();
-if( !isset($_SESSION["softix_token"]) ){
-require_once 'softix-token.php';
-}
-require_once('Connections/eventscon.php'); 
-require_once('dtcm_api.php');
+//session_start();
+//if( !isset($_SESSION["softix_token"]) ){
+//require_once 'softix-token.php';
+//}
+//include('Connections/eventscon.php'); 
+//require_once('dtcm_api.php');
 include("functions.php"); 
 include("config.php"); 
 
@@ -172,28 +172,12 @@ if($_SERVER['REMOTE_ADDR']=='106.220.145.16'){
 }
 if($row_eventRs['dtcm_approved']=='Yes' && $row_eventRs['dtcm_code']!='' ) {
 	$eventcode = $row_eventRs['dtcm_code'];
-if(isset($_SESSION['access_token']) && (time()-$_SESSION['token_addtime'])<$_SESSION['token_lifetime']){
-	//if(isset($_SESSION['access_token'])){
-		$access_token = $_SESSION['access_token'];
-} else{
-$code_details = Dtcm::get_code();
-if($code_details['access_token']!=''){
-$access_token=$code_details['access_token'];
-$_SESSION['access_token']=$access_token;
-$_SESSION['token_lifetime']=$code_details['expires'];
-$_SESSION['token_addtime']=time();
-}
-}
-if($access_token){
-$prices = Dtcm::get_prices($access_token,$eventcode);
+$prices = $dtcm_->get_performance_prices($eventcode);
 $ticket_prices = json_decode($prices,true);
 }
 $basket_info=array();
 $b=1;
-$pcats=array();
-if($_POST['eid'] == 161){
-    require_once 'softix-ticket-price.php';
-}
+$pcats=json_decode($dtcm_->get_performance_prices($eventcode),true);
 foreach($_POST['tickets'] as $key=>$val)
 
 	{
@@ -201,61 +185,48 @@ foreach($_POST['tickets'] as $key=>$val)
 		if($val){
 
 			$pids[$key]=$key;
-
-			
-
 			$price_values = getDtcmPriceVal($key,$ticket_prices);
-                        if($_POST['eid'] == 161){
-$total_price = $single_price*$val;
-                        }else{
-			$total_price=$total_price+($price_values['PriceNet']*$val);
-                        }
-                        if($_POST['eid'] != 161){
-			$pcats[$price_values['PriceCategoryCode']][]=$price_values;
-                        }
+            $total_price=$total_price+($price_values['PriceNet']/100*$val);
+                  
 		}
 	}
 	$total_price=$total_price+$_POST['charges']+($total_price*0.05)+2;
 
 $pids=implode(",",$pids);
 
-die(var_dump($pids));
+//die(var_dump($pids));
 
-if(!empty($pcats)){
-	foreach($pcats as $catcode => $price_data){
+var_dump($total_price);
+var_dump($_POST);
+
+if(isset($_POST['category'])){
+$pcats=$_POST['category'];
+$prices=$_POST['price'];
+$tickets=$_POST['tickets'];
+	//foreach($pcats as $catcode => $cat){
 		$basket_info['channel']='W';
-		$basket_info['seller']=Dtcm::$seller_code;
+		$basket_info['seller']=$dtcm_->seller_code;
 		$basket_info['performancecode']=$eventcode;
-		$basket_info['area']='@0';
+		$basket_info['area']='@'.$pcats;
 		$basket_info['autoReduce']=false;
-		foreach ($price_data as $p){
+		foreach ($prices as $pricecode=>$cost){
+		if($pricecode[0]!=$pcats) continue;
 			$basket_info['demand'][]=array(
-								'priceTypeCode'=>$p['PriceTypeCode'],
-								'quantity'=>$_POST['tickets'][$p['PriceId']],
-								'admits'=>$_POST['tickets'][$p['PriceId']],
-								'offerCode'=>'',
-								'qualifierCode'=>'',
-								'entitlement'=>'',
-								'Customer'=> array()
+								'priceTypeCode'=>substr($pricecode,1),
+								'priceTypeName'=>$_POST['pricename'][$pricecode],
+								'quantity'=>$_POST['tickets'][$pricecode]
 			);
 		}
-	}
+	//}
 }
+
+//var_dump($pcats);
 if(!empty($basket_info)){
-	if(isset($_SESSION['access_token']) && (time()-$_SESSION['token_addtime'])<$_SESSION['token_lifetime']){
-	//if(isset($_SESSION['access_token'])){
-		$access_token = $_SESSION['access_token'];
-	} else{
-	$code_details = Dtcm::get_code();
-		if($code_details['access_token']!=''){
-			$access_token=$code_details['access_token'];
-			$_SESSION['access_token']=$access_token;
-			$_SESSION['token_lifetime']=$code_details['expires'];
-			$_SESSION['token_addtime']=time();
-		}
-	}print_r($basket_info);
-	$basket_details = Dtcm::addToBasket($access_token,$basket_info);
-	print_r($basket_details);exit;
+	$args=array($basket_info,'');
+	var_dump($args[0]['demand']);
+	$basket_details = $dtcm_->post_demands_to_dtcm($args);
+	var_dump($basket_details);
+	
 	$basket_id = $basket_details['originBasketId'];
 	$ccomp = $_POST['comp_tickets'];
 	$zcomp = $_POST['compz_tickets'];
@@ -433,6 +404,5 @@ if($Result1){
 
 $_SESSION['orderid'] = mysql_insert_id();
         
-}
 }
 }

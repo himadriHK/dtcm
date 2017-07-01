@@ -1,10 +1,10 @@
-<?php require_once('Connections/eventscon.php'); include('dtcm_api/api_test.php');
+<?php include('dtcm_api/api_test.php');
 include('dtcm_api/dtcm_api.php'); ?>
 <?php include("functions.php"); ?>
 <?php include("config.php"); ?>
 <?php
 
-require_once 'softix-ticket-price.php';
+//require_once 'softix-ticket-price.php';
 
 //var_dump($_SESSION['softix_token']);
 //var_dump($single_price);
@@ -470,22 +470,26 @@ if(isset($_GET['eid'])){
 												//var_dump(multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId'])));
 												if($available_prices['PriceCategories'][multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['Availability']['SoldOut']=='true')
 													continue;
-												if($available_prices['PriceCategories'][multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['PriceCategoryName']=='Reserved')
-													continue;
+												//if($available_prices['PriceCategories'][multidimensional_search($available_prices['PriceCategories'],array('PriceCategoryId'=>$stand['PriceCategoryId']))]['PriceCategoryName']=='Reserved')
+													//continue;
 										?>
 										<div class="price_option">
 										<h4>
+										<input type="radio" name="category" value="<?php echo $stand['PriceCategoryCode'];?>" checked='true' onclick='getTotal()'/>
 										<?php echo $stand['PriceCategoryName'];?>
 										</h4>
 										<?php 
 											foreach ($ticket_prices['PriceTypes'] as $priceType){
 												//var_dump($priceType);
-												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'){
+												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'|| $priceType['PriceTypeCode'] == 'J'){
 													$price_data = get_priceByCatType($stand['PriceCategoryId'],$priceType['PriceTypeId'],$ticket_prices);
 													if(($price_data !='' && $price_data['PriceNet']>0 )){ 
-													$string .=$price_data['PriceId'].',';
+													$string .="'".$stand['PriceCategoryCode'].$price_data['PriceTypeCode']."',";
 														?>
-														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?></span>:<span class="adult_price" id="price<?php echo $price_data['PriceId']?>"><?php echo $price_data['PriceNet']/100;?></span>&nbsp;AED<br />
+														<input type="hidden" name="PriceCategoryCode[<?php echo $stand['PriceCategoryCode'];?>]" value="<?php echo $stand['PriceCategoryCode'];?>"/>
+														<span class="adult_price"><?php echo $priceType['PriceTypeName'];?></span>:<span class="adult_price" id="price<?php echo $stand['PriceCategoryCode'].$price_data['PriceTypeCode']?>"><?php echo $price_data['PriceNet']/100;?></span>&nbsp;AED<br />
+														<input type="hidden" name="price[<?php echo $stand['PriceCategoryCode'].$price_data['PriceTypeCode']?>]" value="<?php echo $price_data['PriceNet']/100;?>"/>
+														<input type="hidden" name="pricename[<?php echo $stand['PriceCategoryCode'].$price_data['PriceTypeCode']?>]" value="<?php echo $priceType['PriceTypeName'];?>"/>
 										<?php 
 														
 													}
@@ -495,7 +499,7 @@ if(isset($_GET['eid'])){
 										<div class="adultbg">
 										<?php 
 											foreach ($ticket_prices['PriceTypes'] as $priceType){
-												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'){
+												if($priceType['PriceTypeCode'] == 'A' || $priceType['PriceTypeCode'] == 'Q'|| $priceType['PriceTypeCode'] == 'J'){
 													$price_data = get_priceByCatType($stand['PriceCategoryId'],$priceType['PriceTypeId'],$ticket_prices);
 													if($price_data !='' && $price_data['PriceNet']>0 ){
 										?>
@@ -503,8 +507,8 @@ if(isset($_GET['eid'])){
 												<span class="price_qty"><?php echo $priceType['PriceTypeName'];?>
 												
 												 <select
-													name="tickets[<?php echo $price_data['PriceId'];?>]"
-													id="tickets<?php echo $price_data['PriceId'];?>"
+													name="tickets[<?php echo $stand['PriceCategoryCode'].$price_data['PriceTypeCode'];?>]"
+													id="tickets<?php echo $stand['PriceCategoryCode'].$price_data['PriceTypeCode'];?>"
 													onchange="getTotal();" >
 													<?php for($i=0;$i<=10;$i++){?>
 														<option value="<?php echo $i;?>">
@@ -512,8 +516,7 @@ if(isset($_GET['eid'])){
 														</option>
 														<?php }?>
 												</select> 
-												<input type="hidden" name="ctickets[<?php echo $price_data['PriceId'];?>]"
-													id="ctickets<?php echo $price_data['PriceId'];?>" value=0 />
+								
 											</div>
 											<?php }
 											}
@@ -1026,10 +1029,16 @@ pageTracker._trackPageview();
 <script type="text/javascript" language="javascript">
 
 function getTotal(){
+//debugger;
+//if($("[name='category']").prop('checked')==false) return false;
+var cat=$("[name='category']:checked").val();
+console.log(cat);
 var tottickets;
 tottickets = 0;
 $.each([ <?php echo trim($string,",");?> ], function( index, value ) {
 var k=value;
+console.log(k[0]);
+if(k[0]!=cat) return;
 //var k = document.form1.prices.value;
 //document.form1.price.value = price[k];
 //document.form1.cprice.value = cprice[k];
@@ -1038,7 +1047,8 @@ var k=value;
 if($("#tickets"+k) && $("#tickets"+k).val()!=0){
 tottickets = Number(tottickets) +(Number($("#price"+k).prop('innerText') * $("#tickets"+k).val()));
 }
-console.log(tottickets);
+
+//console.log(tottickets);
 
 //if($("#ctickets"+k) && $("#ctickets"+k).val()!=0){
 //    console.log(cprice[k]);
